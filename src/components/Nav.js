@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../LittleLemonLogo.svg';
+import logo from '../assets/LittleLemonLogo.svg';
 import navLinks from '../NavLinks';
 
 
