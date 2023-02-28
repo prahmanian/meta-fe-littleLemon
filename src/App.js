@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './components/Nav'
 import Footer from './components/Footer';
 import About from './components/About';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             Learn React
           </a>
         </header>
+        <Testimonials />
         <About />
       </div>
       <Footer />
