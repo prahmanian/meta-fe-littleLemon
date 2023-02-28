@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Footer from './components/Footer';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
+import Specials from './components/Specials';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             Learn React
           </a>
         </header>
+        <Specials />
         <Testimonials />
         <About />
       </div>
