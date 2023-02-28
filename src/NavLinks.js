@@ -25,4 +25,19 @@ const navLinks = [
     }
 ]
 
+export const socialLinks = [
+    {
+        title: "Facebook",
+        path: "/"
+    },
+    {
+        title: "Instagram",
+        path: ""
+    },
+    {
+        title: "Yelp",
+        path: ""
+    }
+]
+
 export default navLinks
