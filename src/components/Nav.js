@@ -1,32 +1,7 @@
 import React from 'react'
 import logo from '../LittleLemonLogo.svg';
+import navLinks from '../NavLinks';
 
-const navLinks = [
-    {
-        title: "Home",
-        path: "/"
-    },
-    {
-        title: "About",
-        path: ""
-    },
-    {
-        title: "Menu",
-        path: ""
-    },
-    {
-        title: "Reservations",
-        path: ""
-    },
-    {
-        title: "Order Online",
-        path: ""
-    },
-    {
-        title: "Login",
-        path: ""
-    }
-]
 
 const Nav = () => {
     return (
