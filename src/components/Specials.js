@@ -13,6 +13,7 @@ const Specials = () => {
     return (
         <section>
             <h2>Specials</h2>
+            {/* TODO Add Button */}
             <MenuItem item={item1}/>
         </section>
     )
