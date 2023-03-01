@@ -1,3 +1,7 @@
+.About {
+    color: var(--dark);
+}
+
 .About-article {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -7,4 +11,5 @@
 
 .About-text {
     max-width: 65ch;
+    font-family: var(--karla);
 }
