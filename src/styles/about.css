@@ -1,0 +1,10 @@
+.About-article {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    /* TODO add media query */
+    max-width: 45vw;
+}
+
+.About-text {
+    max-width: 65ch;
+}

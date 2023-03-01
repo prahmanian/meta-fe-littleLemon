@@ -15,7 +15,7 @@
 }
 
 @import './styles/testimonials.css';
-
+@import './styles/about.css';
 
 .App {
   text-align: center;
@@ -75,11 +75,44 @@
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  justify-content: center;
+}
 
+.v-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap {
+  gap: 2rem;
+}
+
+.center {
+  justify-content: center;
 }
 
 .space-between {
   justify-content: space-between;
 }
 
+
+
+.left {
+  align-items: start;
+  text-align: left;
+}
+
+.title {
+  font-family: var(--markazi);
+  font-size: 64px;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  line-height: 0;
+}
+
+.subtitle {
+  font-family: var(--markazi);
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
