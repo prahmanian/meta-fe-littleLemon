@@ -1,0 +1,35 @@
+.Nav {
+    gap: 5rem;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.Nav li {
+    list-style: none;
+}
+
+.Nav-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    padding: 0.25rem;
+    font-weight: 700;
+    font-family: var(--markazi);
+    font-size: 1.25rem;
+}
+
+.Nav-link:visited {
+    color: var(--primary-green);
+}
+
+.Nav-link:hover {
+    color: var(--secondary-orange);
+}
+
+.Nav-link:focus {
+    color: var(--secondary-orange);
+    outline: 1px solid var(--primary-yellow);
+}
+
+.Nav-link:active {
+    color: var(--primary-yellow);
+}
