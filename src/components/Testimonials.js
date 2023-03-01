@@ -23,6 +23,8 @@ const Testimonials = () => {
             <div className='h-flex'>
                 <Testimonial user={user1}/>
                 <Testimonial user={user2}/>
+                <Testimonial user={{...user2, name:'Bobby', rating:3}}/>
+                <Testimonial user={{...user2, name:'Joe', rating:1}}/>
             </div>
 
         </section>
