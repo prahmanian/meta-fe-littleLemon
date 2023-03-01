@@ -18,9 +18,9 @@ const user2 = {
 
 const Testimonials = () => {
     return (
-        <section>
-            <h3>Testimonials</h3>
-            <div>
+        <section className='Testimonials container container-dark'>
+            <h3 className='Testimonials-title'>Testimonials</h3>
+            <div className='h-flex'>
                 <Testimonial user={user1}/>
                 <Testimonial user={user2}/>
             </div>

@@ -8,8 +8,9 @@ const Testimonial = (props) => {
     const {name, image, rating, review} = props.user
 
     return (
-        <article>
+        <article className='Testimonial'>
             <StarRatingComponent 
+                className="Testimonial-rating"
                 name={`${name}-rating`} 
                 editing={false}
                 starColor="#F4CE14"
@@ -18,11 +19,11 @@ const Testimonial = (props) => {
                 starCount={5}
                 value={rating ? rating : 4}
             />
-            <div>
-                <Avatar name={name} size="30" round={true} src={image} alt={`Image of ${name}`}/>
-                <h6>{name}</h6>
+            <div className='Testimonial-user h-flex space-between '>
+                <Avatar className="Testimonial-avatar" name={name} size="30" round={true} src={image} alt={`Image of ${name}`}/>
+                <h6 className='Testimonial-name'>{name}</h6>
             </div>
-            <p>{review}</p>
+            <p className='Testimonial-quote'>{review}</p>
         </article>
     )
 }
