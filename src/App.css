@@ -16,6 +16,7 @@
 
 @import './styles/testimonials.css';
 @import './styles/about.css';
+@import './styles/footer.css';
 
 .App {
   text-align: center;
@@ -92,6 +93,10 @@
 
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 

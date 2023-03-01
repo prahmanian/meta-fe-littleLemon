@@ -5,38 +5,38 @@ const navLinks = [
     },
     {
         title: "About",
-        path: ""
+        path: "/about"
     },
     {
         title: "Menu",
-        path: ""
+        path: "/menu"
     },
     {
         title: "Reservations",
-        path: ""
+        path: "/reservations"
     },
     {
         title: "Order Online",
-        path: ""
+        path: "/order"
     },
     {
         title: "Login",
-        path: ""
+        path: "/login"
     }
 ]
 
 export const socialLinks = [
     {
         title: "Facebook",
-        path: "/"
+        path: "/facebook"
     },
     {
         title: "Instagram",
-        path: ""
+        path: "/instagram"
     },
     {
         title: "Yelp",
-        path: ""
+        path: "/yelp"
     }
 ]
 

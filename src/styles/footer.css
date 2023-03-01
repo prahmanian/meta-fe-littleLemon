@@ -1,0 +1,57 @@
+.Footer {
+    background-color: var(--primary-green);
+    color: var(--light);
+    min-height: auto;
+    height: 20rem;
+}
+
+.Footer-link, .Footer li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+.Footer-contact li {
+    margin-bottom: 1rem;
+}
+
+.Footer img {
+    max-height: 10rem;
+}
+
+.Footer-section {
+    max-width: 16ch;
+    justify-content: top;
+    align-self: flex-start;
+
+}
+
+.Footer-heading {
+    font-family: var(--markazi);
+    font-size: 1.5rem;
+    color: var(--primary-yellow);
+    line-height: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.Footer-link {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.Footer-link:visited {
+    color: var(--secondary-peach);
+}
+
+.Footer-link:hover {
+    color: var(--secondary-orange);
+}
+
+.Footer-link:focus {
+    color: var(--secondary-orange);
+    outline: 1px solid var(--primary-yellow);
+}
+
+.Footer-link:active {
+    color: var(--primary-yellow);
+}

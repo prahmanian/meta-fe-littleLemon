@@ -1,35 +1,37 @@
 import React from 'react'
-import logo from '../assets/LittleLemonLogo.svg';
+import logo from '../assets/logo-vertical-white.png';
 import navLinks, {socialLinks} from '../NavLinks';
 
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='Footer container h-flex space-around'>
 
             <img src={logo} className="Nav-logo" alt="Little Lemon Logo" />
             
-            <nav>
-                <h3>Doormat Navigation</h3>
+            <nav className='Footer-section'>
+                <h3 className='Footer-heading'>Navigation</h3>
                 <ul>
                     {navLinks.map(({title, path}) => 
-                        <li key={title}><a className="Nav-link" href={path} target="_blank" rel="noopener noreferrer"> {title} </a></li>
+                        <li key={title}><a className="Footer-link" href={path} target="_blank" rel="noopener noreferrer"> {title} </a></li>
                     )}
                 </ul>
             </nav>
 
-            <section>
-                <h3>Contact</h3>
-                <span>Address</span><br/>
-                <span>Phone Number</span><br/>
-                <span>Email</span><br/>
+            <section className='Footer-section Footer-contact'>
+                <h3 className='Footer-heading'>Contact</h3>
+                <ul>
+                    <li>35 Lemongrass Way<br/>Chicago, Illinois</li>
+                    <li>(628)-243-6637</li>
+                    <li>info@littlelemon.com</li>
+                </ul>
             </section>
 
-            <section>
-                <h3>Social Media Links</h3>
+            <section className='Footer-section'>
+                <h3 className='Footer-heading'>Social Media Links</h3>
                 <ul>
                     {socialLinks.map(({title, path}) => 
-                        <li key={title}><a className="Nav-link" href={path} target="_blank" rel="noopener noreferrer"> {title} </a></li>
+                        <li key={title}><a className="Footer-link" href={path} target="_blank" rel="noopener noreferrer"> {title} </a></li>
                     )}
                 </ul>
 
