@@ -1,0 +1,26 @@
+.Header {
+
+    background-color: var(--primary-green);
+    color: var(--light);
+    gap: 5rem;
+}
+
+.Header-details {
+    max-width: 40ch;
+    /* margin-left: 5rem; */
+    font-family: var(--karla);
+    text-align: left;
+    /* margin-left: 5rem; */
+}
+
+.Header-text {
+    margin-bottom: 2rem;
+}
+
+.Header figure {
+    width: 40vw;
+}
+
+.Header figure img {
+    width: 100%;
+}

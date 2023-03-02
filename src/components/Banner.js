@@ -3,16 +3,19 @@ import image from '../assets/MarioAndAdrianA.jpg'
 
 const Banner = () => {
     return (
-        <header>
-            <div>
-                <h1>Little Lemon</h1>
-                <h2>Chicago</h2>
-                <p>
+        <header className='Header container h-flex'>
+            <div className='Header-details v-flex'>
+                <h1 className='title'>Little Lemon</h1>
+                <h2 className='subtitle'>Chicago</h2>
+                <p className='Header-text'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi massa, luctus quis ante pharetra, mollis bibendum turpis. Nulla volutpat condimentum commodo. Proin a risus bibendum, hendrerit purus sit amet, fermentum sapien.
                 </p>
                 <button>Reserve a Table</button>
             </div>
-            <img src={image} alt="Little Lemon Bistro" width="100"/>
+            <figure>
+                <img src={image} alt="Little Lemon Bistro"/>
+            </figure>
+            
 
         </header>
     )
