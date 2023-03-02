@@ -1,0 +1,75 @@
+.MenuItem {
+    font-family: var(--karla);
+    flex: 1 1 200px;
+    width: 250px;
+    border: 1px solid var(--dark);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-bottom: 5rem;
+}
+
+.MenuItem-details {
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: min-content;
+
+}
+
+.MenuItem-name {
+    font-weight: 900;
+}
+
+.MenuItem-price {
+    color: var(--secondary-orange);
+    font-weight: bold;
+}
+
+.MenuItem img {
+    width: 100%;
+
+}
+
+.MenuItem-link {
+    font-size: 0.8rem;
+    font-weight: 800;
+    position: relative;
+
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.MenuItem-link::after {
+    content: "";
+    background: url('../assets/DishIcon.svg') no-repeat 0 0;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    margin: 0;
+    margin-left: 0.5rem;;
+    position: absolute;
+    bottom: 0;
+
+}
+
+
+.MenuItem-link:visited {
+    color: var(--primary-green);
+}
+
+.MenuItem-link:hover {
+    color: var(--secondary-orange);
+}
+
+.MenuItem-link:focus {
+    color: var(--secondary-orange);
+}
+
+.MenuItem-link:active {
+    color: var(--primary-yellow);
+}

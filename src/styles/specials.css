@@ -1,0 +1,31 @@
+/* .Specials {
+
+} */
+
+.Specials-title {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--markazi);
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.Specials-header > button {
+    max-width: fit-content;
+    padding: 0.5rem 1rem;
+}
+
+.Specials-header {
+    display: flex;
+    flex-direction: row;
+    /* width: calc(100vw - 8rem); */
+    width: 80%;
+    margin: 2rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .Specials-items {
+    max-width: 100px;
+} */

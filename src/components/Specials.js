@@ -11,10 +11,17 @@ const item1 = {
 
 const Specials = () => {
     return (
-        <section>
-            <h2>Specials</h2>
-            {/* TODO Add Button */}
-            <MenuItem item={item1}/>
+        <section className='Specials container v-flex'>
+            <div className="Specials-header">
+                <h2 className='Specials-title'>Specials</h2>
+                <button>Order Online</button>
+            </div>
+            <div className="Specials-items h-flex space-around">
+                <MenuItem item={item1}/>
+                <MenuItem item={item1}/>
+                <MenuItem item={item1}/>
+            </div>
+            
         </section>
     )
 }
