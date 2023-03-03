@@ -1,68 +1,48 @@
-import React, {useState, useReducer, useEffect} from 'react'
+import React from 'react'
 
 import BookingForm from '../components/BookingForm'
 import Confirm from '../components/Confirm'
-import {fetchAPI} from '../bookingsAPI'
 
 import restaurant from '../assets/restaurant.jpg'
 
 
-const BookingPage = () => {
+const BookingPage = (props) => {
 
-    const [confirmed, setConfirmed] = useState(false)
+    const {
+        confirmed,
+        date,
+        time,
+        guestCount,
+        name,
+        phoneNumber,
+        specialOccasion,
+        requests,
+        // reservations
+    } = props.values
 
-    const [date, setDate] = useState(new Date());
-    const [time, setTime] = useState("");
-    const [guestCount, setGuestCount] = useState(1);
-    const [name, setName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [specialOccasion, setSpecialOccasion] = useState("None");
-    const [requests, setRequests] = useState("");
+    const {
+        setConfirmed,
+        setDate,
+        setTime,
+        setGuestCount,
+        setName,
+        setPhoneNumber,
+        setSpecialOccasion,
+        setRequests,
+        // setReservations
+    } = props.setters
 
-    const [reservations, setReservations] = useState([])
+    const {
+        saveReservation,
+        // resetForm,
+        submitForm,
+        // updateTimes
+    } = props.handlers
 
-    const saveReservation = () => {
-        console.log('saving...')
-        const newReservation = {
-            date,
-            time,
-            guestCount,
-            name,
-            phoneNumber,
-            specialOccasion,
-            requests
-        }
-        const resis = reservations.length > 0 ? [...reservations] : []
-        resis.push(newReservation)
-        setReservations(resis)
-        console.log(reservations)
-    }
-
-    useEffect(() => resetForm(),[reservations])
-
-    const resetForm = () => {
-        setSpecialOccasion('None')
-        setRequests('')
-        setGuestCount(1)
-        setTime("")
-        setDate(new Date())
-        setConfirmed(false)
-    }
-
-    const submitForm = (e, formData) => {
-        e.preventDefault()
-        console.log('submitForm pressed')
-        setConfirmed(true)
-    }
-
-    const updateTimes = (state, action) => {
-        const date = action.date
-        const output = fetchAPI(date)
-        return output
-    }
-
-    const [availableTimes, reducer] = useReducer(updateTimes, new Date(), fetchAPI)
-
+    const {
+        availableTimes,
+        reducer
+    } = props.times
 
     return (
         <main className='container h-flex'>
