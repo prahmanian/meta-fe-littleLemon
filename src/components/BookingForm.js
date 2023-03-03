@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import AvailableTimes from './AvailableTimes';
 
 
-const BookingForm = () => {
+const BookingForm = (props) => {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guestCount, setGuestCount] = useState(1);
@@ -11,7 +11,11 @@ const BookingForm = () => {
     const [specialOccasion, setSpecialOccasion] = useState("None");
     const [requests, setRequests] = useState("");
 
-
+    const handleDateChange = (e) => {
+        const newDate = e.target.value
+        setDate(newDate)
+        props.updateTimes(newDate)
+    }
 
     return (
         <>
@@ -25,7 +29,7 @@ const BookingForm = () => {
                         name="date"
                         type="date"
                         value={date}
-                        //onChange={handleDateChange} //TODO implement handler
+                        onChange={handleDateChange} //TODO implement handler
                         required
                     />
                 </div>
@@ -40,7 +44,7 @@ const BookingForm = () => {
                         onChange={(e)=>{setTime(e.target.value)}}
                         required
                     >
-                        <AvailableTimes />
+                        <AvailableTimes times={props.availableTimes}/>
                     </select>
                 </div>
 
