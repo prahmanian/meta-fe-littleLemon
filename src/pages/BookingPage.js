@@ -1,6 +1,7 @@
 import restaurant from '../assets/restaurant.jpg'
 
 import BookingForm from '../components/BookingForm'
+import {fetchAPI} from '../bookingsAPI'
 
 import React, {useState, useReducer} from 'react'
 
@@ -15,9 +16,17 @@ const timesArr = [
 const BookingPage = () => {
     const [confirmed, setConfirmed] = useState(false)
     
+    
 
-    const updateTimes = () => {return (timesArr)}
-    const [availableTimes, timesReducer] = useReducer(updateTimes, timesArr)
+    const updateTimes = (state, action) => {
+        const date = action.date
+        // console.log('updateTimes', date, 'date')
+        const output = fetchAPI(date)
+        // console.log(output)
+        return output
+    }
+
+    const [availableTimes, reducer] = useReducer(updateTimes, new Date(), fetchAPI)
 
 
     return (
@@ -27,7 +36,7 @@ const BookingPage = () => {
                 'confirmation' : 
                 <BookingForm 
                     availableTimes={availableTimes}
-                    updateTimes={timesReducer}
+                    updateTimes={reducer}
                 />}
             </section>
             <section>

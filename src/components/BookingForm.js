@@ -3,7 +3,7 @@ import AvailableTimes from './AvailableTimes';
 
 
 const BookingForm = (props) => {
-    const [date, setDate] = useState("");
+    const [date, setDate] = useState(new Date());
     const [time, setTime] = useState("");
     const [guestCount, setGuestCount] = useState(1);
     const [name, setName] = useState("");
@@ -12,9 +12,15 @@ const BookingForm = (props) => {
     const [requests, setRequests] = useState("");
 
     const handleDateChange = (e) => {
-        const newDate = e.target.value
-        setDate(newDate)
-        props.updateTimes(newDate)
+        const date = e.target.value
+        const dateObj = new Date(date)
+        dateObj.setDate(dateObj.getDate()+1)
+        // console.log('selected date', date)
+        // console.log('date obj', dateObj)
+        setDate(date)
+
+        props.updateTimes({type: "change_date",
+        date: dateObj})
     }
 
     return (
@@ -29,7 +35,7 @@ const BookingForm = (props) => {
                         name="date"
                         type="date"
                         value={date}
-                        onChange={handleDateChange} //TODO implement handler
+                        onChange={handleDateChange}
                         required
                     />
                 </div>
@@ -44,7 +50,8 @@ const BookingForm = (props) => {
                         onChange={(e)=>{setTime(e.target.value)}}
                         required
                     >
-                        <AvailableTimes times={props.availableTimes}/>
+                        {/* <AvailableTimes times={props.availableTimes}/> */}
+                        {props.availableTimes.map(time => <option key={time} value={time}>{time}</option>)}
                     </select>
                 </div>
 
