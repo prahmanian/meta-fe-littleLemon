@@ -58,7 +58,7 @@ const BookingForm = (props) => {
                     <select 
                         id="time"
                         name="time"
-                        value={props.availableTimes[0]}
+                        value={time !="" ? time : props.availableTimes[0]}
                         onChange={(e)=>{setTime(e.target.value)}}
                         required
                     >

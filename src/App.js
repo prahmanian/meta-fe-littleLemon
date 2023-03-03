@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import BookingPage from './pages/BookingPage';
+import ConfirmedReservations from './pages/ConfirmedReservations';
 
 function App() {
 
@@ -121,7 +122,7 @@ function App() {
             handlers={packageProps().handlers}
             times={packageProps().times}
           />} />
-          <Route path="/confirmed" element={<AboutPage />} />
+          <Route path="/confirmed" element={<ConfirmedReservations reservations={reservations} />} />
 
         </Routes>
         <Footer />
