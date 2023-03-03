@@ -5,6 +5,7 @@ import Confirm from '../components/Confirm'
 import {fetchAPI} from '../bookingsAPI'
 
 import React, {useState, useReducer, useEffect} from 'react'
+import {redirect} from 'react-router-dom'
 
 const timesArr = [
     "7:00 pm",
@@ -24,6 +25,41 @@ const BookingPage = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [specialOccasion, setSpecialOccasion] = useState("None");
     const [requests, setRequests] = useState("");
+
+    const [reservations, setReservations] = useState([])
+
+
+
+    const saveReservation = async() => {
+        console.log('saving...')
+        const newReservation = {
+            date,
+            time,
+            guestCount,
+            name,
+            phoneNumber,
+            specialOccasion,
+            requests
+        }
+        const resis = reservations.length > 0 ? [...reservations] : []
+        resis.push(newReservation)
+        await setReservations(resis)
+        console.log(reservations)
+        return redirect('/confirmed')
+    }
+
+    useEffect(() => resetForm(),[reservations])
+    // useEffect(() => (redirect('/confirmed')),[reservations])
+
+
+    const resetForm = () => {
+        setSpecialOccasion('None')
+        setRequests('')
+        setGuestCount(1)
+        setTime("")
+        setDate(new Date())
+        setConfirmed(false)
+    }
 
     
     const submitForm = (e, formData) => {
@@ -57,7 +93,8 @@ const BookingPage = () => {
                         specialOccasion,
                         requests
                     }} 
-                    edit = {()=> setConfirmed(false)}
+                    edit = {() => setConfirmed(false)}
+                    confirm = {() => saveReservation()}
                 /> : 
                 <BookingForm
                     reservation={{
