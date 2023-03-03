@@ -1,5 +1,7 @@
 import restaurant from '../assets/restaurant.jpg'
 
+import BookingForm from '../components/BookingForm'
+
 import React, {useState} from 'react'
 
 const BookingPage = () => {
@@ -7,7 +9,7 @@ const BookingPage = () => {
     return (
         <main className='container h-flex'>
             <section>
-                {confirmed ? 'confirmation' : 'form'}
+                {confirmed ? 'confirmation' : <BookingForm />}
             </section>
             <section>
                 <figure>
