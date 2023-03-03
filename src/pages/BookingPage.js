@@ -1,21 +1,14 @@
-import restaurant from '../assets/restaurant.jpg'
+import React, {useState, useReducer, useEffect} from 'react'
 
 import BookingForm from '../components/BookingForm'
 import Confirm from '../components/Confirm'
 import {fetchAPI} from '../bookingsAPI'
 
-import React, {useState, useReducer, useEffect} from 'react'
-import {redirect} from 'react-router-dom'
+import restaurant from '../assets/restaurant.jpg'
 
-const timesArr = [
-    "7:00 pm",
-    "8:00 pm",
-    "9:00 pm",
-    "10:00 pm",
-    "11:00 pm"
-]
 
 const BookingPage = () => {
+
     const [confirmed, setConfirmed] = useState(false)
 
     const [date, setDate] = useState(new Date());
@@ -28,9 +21,7 @@ const BookingPage = () => {
 
     const [reservations, setReservations] = useState([])
 
-
-
-    const saveReservation = async() => {
+    const saveReservation = () => {
         console.log('saving...')
         const newReservation = {
             date,
@@ -43,14 +34,11 @@ const BookingPage = () => {
         }
         const resis = reservations.length > 0 ? [...reservations] : []
         resis.push(newReservation)
-        await setReservations(resis)
+        setReservations(resis)
         console.log(reservations)
-        return redirect('/confirmed')
     }
 
     useEffect(() => resetForm(),[reservations])
-    // useEffect(() => (redirect('/confirmed')),[reservations])
-
 
     const resetForm = () => {
         setSpecialOccasion('None')
@@ -61,7 +49,6 @@ const BookingPage = () => {
         setConfirmed(false)
     }
 
-    
     const submitForm = (e, formData) => {
         e.preventDefault()
         console.log('submitForm pressed')
@@ -70,9 +57,7 @@ const BookingPage = () => {
 
     const updateTimes = (state, action) => {
         const date = action.date
-        // console.log('updateTimes', date, 'date')
         const output = fetchAPI(date)
-        // console.log(output)
         return output
     }
 

@@ -5,9 +5,6 @@ const Confirm = ({reservation, edit, confirm}) => {
     return (
         <div>
             <h1>Let's confirm...</h1>
-            
-            {/* {reservation.date.toLocaleDateString('en-CA')} */}
-            
 
             <p>Who:</p>
             <p><b>{reservation.name}</b>, party of <b>{reservation.guestCount}</b>!</p>

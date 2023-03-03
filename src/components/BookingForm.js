@@ -1,15 +1,8 @@
-import React, {useState} from 'react'
-import AvailableTimes from './AvailableTimes';
+import React from 'react'
 
 
 const BookingForm = (props) => {
-    // const [date, setDate] = useState(props.reservation.date);
-    // const [time, setTime] = useState(props.reservation.time);
-    // const [guestCount, setGuestCount] = useState(props.reservation.guestCount);
-    // const [name, setName] = useState(props.reservation.name);
-    // const [phoneNumber, setPhoneNumber] = useState("");
-    // const [specialOccasion, setSpecialOccasion] = useState("None");
-    // const [requests, setRequests] = useState("");
+
 
     const {
         date,
@@ -65,12 +58,10 @@ const BookingForm = (props) => {
                     <select 
                         id="time"
                         name="time"
-                        // type="time"
                         value={props.availableTimes[0]}
                         onChange={(e)=>{setTime(e.target.value)}}
                         required
                     >
-                        {/* <AvailableTimes times={props.availableTimes}/> */}
                         {props.availableTimes.map(time => <option key={time} value={time}>{time}</option>)}
                     </select>
                 </div>
@@ -115,16 +106,16 @@ const BookingForm = (props) => {
                 </div>
 
                 <div>
-                    <label htmlFor="specialOccasion">When will you arrive?</label>
+                    <label htmlFor="specialOccasion">Are you celebrating a special occasion?</label>
                     <select 
                         id="specialOccasion"
                         name="specialOccasion"
                         placeholder="Select Occasion"
-                        // value={specialOccasion}
+                        value={specialOccasion}
                         onChange={(e)=>{setSpecialOccasion(e.target.value)}}
                         required
                     >
-                        <option value="None">None</option>
+                        <option value="None">-</option>
                         <option value="Birthday">Birthday</option>
                         <option value="Engagement">Engagement</option>
                         <option value="Anniversary">Anniversary</option>
