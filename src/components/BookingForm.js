@@ -15,9 +15,9 @@ const BookingForm = (props) => {
         const date = e.target.value
         const dateObj = new Date(date)
         dateObj.setDate(dateObj.getDate()+1)
-        // console.log('selected date', date)
-        // console.log('date obj', dateObj)
-        setDate(date)
+        console.log('selected date', date)
+        console.log('date obj', dateObj)
+        setDate(dateObj)
 
         props.updateTimes({type: "change_date",
         date: dateObj})
@@ -34,7 +34,7 @@ const BookingForm = (props) => {
                         id="date"
                         name="date"
                         type="date"
-                        value={date}
+                        value={date.toLocaleDateString('en-CA')}
                         onChange={handleDateChange}
                         required
                     />

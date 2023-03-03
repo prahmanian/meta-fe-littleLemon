@@ -15,8 +15,13 @@ const timesArr = [
 
 const BookingPage = () => {
     const [confirmed, setConfirmed] = useState(false)
+
+    const [reservation, setReservation] = useState(false)
     
-    
+    const submitForm = (formData) => {
+        setReservation({...reservation, ...formData})
+        setConfirmed(true)
+    }
 
     const updateTimes = (state, action) => {
         const date = action.date
@@ -37,6 +42,7 @@ const BookingPage = () => {
                 <BookingForm 
                     availableTimes={availableTimes}
                     updateTimes={reducer}
+                    submitForm={submitForm}
                 />}
             </section>
             <section>
