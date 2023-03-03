@@ -1,9 +1,10 @@
 import restaurant from '../assets/restaurant.jpg'
 
 import BookingForm from '../components/BookingForm'
+import Confirm from '../components/Confirm'
 import {fetchAPI} from '../bookingsAPI'
 
-import React, {useState, useReducer} from 'react'
+import React, {useState, useReducer, useEffect} from 'react'
 
 const timesArr = [
     "7:00 pm",
@@ -16,10 +17,18 @@ const timesArr = [
 const BookingPage = () => {
     const [confirmed, setConfirmed] = useState(false)
 
-    const [reservation, setReservation] = useState(false)
+    const [date, setDate] = useState(new Date());
+    const [time, setTime] = useState("");
+    const [guestCount, setGuestCount] = useState(1);
+    const [name, setName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [specialOccasion, setSpecialOccasion] = useState("None");
+    const [requests, setRequests] = useState("");
+
     
-    const submitForm = (formData) => {
-        setReservation({...reservation, ...formData})
+    const submitForm = (e, formData) => {
+        e.preventDefault()
+        console.log('submitForm pressed')
         setConfirmed(true)
     }
 
@@ -38,8 +47,37 @@ const BookingPage = () => {
         <main className='container h-flex'>
             <section>
                 {confirmed ? 
-                'confirmation' : 
-                <BookingForm 
+                <Confirm 
+                    reservation = {{
+                        date,
+                        time,
+                        guestCount,
+                        name,
+                        phoneNumber,
+                        specialOccasion,
+                        requests
+                    }} 
+                    edit = {()=> setConfirmed(false)}
+                /> : 
+                <BookingForm
+                    reservation={{
+                        date,
+                        time,
+                        guestCount,
+                        name,
+                        phoneNumber,
+                        specialOccasion,
+                        requests
+                    }}
+                    handlers = {{
+                        setDate,
+                        setTime,
+                        setGuestCount,
+                        setName,
+                        setPhoneNumber,
+                        setSpecialOccasion,
+                        setRequests
+                    }}
                     availableTimes={availableTimes}
                     updateTimes={reducer}
                     submitForm={submitForm}

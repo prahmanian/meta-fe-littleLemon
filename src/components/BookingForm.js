@@ -3,13 +3,33 @@ import AvailableTimes from './AvailableTimes';
 
 
 const BookingForm = (props) => {
-    const [date, setDate] = useState(new Date());
-    const [time, setTime] = useState("");
-    const [guestCount, setGuestCount] = useState(1);
-    const [name, setName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [specialOccasion, setSpecialOccasion] = useState("None");
-    const [requests, setRequests] = useState("");
+    // const [date, setDate] = useState(props.reservation.date);
+    // const [time, setTime] = useState(props.reservation.time);
+    // const [guestCount, setGuestCount] = useState(props.reservation.guestCount);
+    // const [name, setName] = useState(props.reservation.name);
+    // const [phoneNumber, setPhoneNumber] = useState("");
+    // const [specialOccasion, setSpecialOccasion] = useState("None");
+    // const [requests, setRequests] = useState("");
+
+    const {
+        date,
+        time,
+        guestCount,
+        name,
+        phoneNumber,
+        specialOccasion,
+        requests
+    } = props.reservation
+
+    const {
+        setDate,
+        setTime,
+        setGuestCount,
+        setName,
+        setPhoneNumber,
+        setSpecialOccasion,
+        setRequests
+    } = props.handlers
 
     const handleDateChange = (e) => {
         const date = e.target.value
@@ -26,7 +46,7 @@ const BookingForm = (props) => {
     return (
         <>
             <h1>Make a Reservation</h1>
-            <form action="" className='Reservations-form'>
+            <form  className='Reservations-form'>
 
                 <div>
                     <label htmlFor="date">Pick your date:</label>
@@ -124,7 +144,15 @@ const BookingForm = (props) => {
                     </div>
                 )}
 
-                <button type='submit'>Make your Reservation</button>
+                <button type='submit' onClick={(e)=>{props.submitForm(e, {
+                    date,
+                    time,
+                    guestCount,
+                    name,
+                    phoneNumber,
+                    specialOccasion,
+                    requests
+                })}}>Make your Reservation</button>
 
 
 
