@@ -58,10 +58,11 @@ const BookingForm = (props) => {
                     <select 
                         id="time"
                         name="time"
-                        value={time !="" ? time : props.availableTimes[0]}
+                        value={time ? time : 'select time'}
                         onChange={(e)=>{setTime(e.target.value)}}
                         required
-                    >
+                    >   
+                        <option  disabled >select time</option>
                         {props.availableTimes.map(time => <option key={time} value={time}>{time}</option>)}
                     </select>
                 </div>

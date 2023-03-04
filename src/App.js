@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState, useReducer, useEffect} from 'react'
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import {fetchAPI} from './bookingsAPI'
+import {BrowserRouter, Routes, Route, redirect} from "react-router-dom"
+import {fetchAPI, submitAPI} from './bookingsAPI'
 
 import Nav from './components/Nav'
 import Footer from './components/Footer';
@@ -17,7 +17,7 @@ function App() {
   const [confirmed, setConfirmed] = useState(false)
 
   const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState('null');
   const [guestCount, setGuestCount] = useState(1);
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -41,6 +41,8 @@ function App() {
       resis.push(newReservation)
       setReservations(resis)
       console.log(reservations)
+      const success = submitAPI(newReservation)
+      if (success) {redirect('test')}
   }
 
   useEffect(() => resetForm(),[reservations])
@@ -49,7 +51,7 @@ function App() {
       setSpecialOccasion('None')
       setRequests('')
       setGuestCount(1)
-      setTime("")
+      setTime(null)
       setDate(new Date())
       setConfirmed(false)
   }
@@ -63,6 +65,7 @@ function App() {
   const updateTimes = (state, action) => {
       const date = action.date
       const output = fetchAPI(date)
+      if (! (new Set(output).has(time))) setTime(null);
       return output
   }
 
