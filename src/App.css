@@ -8,6 +8,8 @@
   --dark: #333333;
   --karla: 'Karla', sans-serif;
   --markazi: 'Markazi Text', serif;
+
+  --max-width: 1200px;
 }
 
 * {
@@ -58,7 +60,7 @@ figure {
 }
 
 .contents {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 

@@ -11,12 +11,12 @@ const item1 = {
 
 const Specials = () => {
     return (
-        <section className='Specials container v-flex'>
+        <section className='Specials'>
             <div className="Specials-header">
                 <h2 className='Specials-title'>Specials</h2>
                 <button>Order Online</button>
             </div>
-            <div className="Specials-items h-flex space-around">
+            <div className="Specials-items">
                 <MenuItem item={item1}/>
                 <MenuItem item={item1}/>
                 <MenuItem item={item1}/>
