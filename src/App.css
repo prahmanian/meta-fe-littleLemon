@@ -57,6 +57,11 @@ figure {
   justify-content: center;
 }
 
+.contents {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .container-dark {
   background-color: var(--dark);
   color: var(--light);
