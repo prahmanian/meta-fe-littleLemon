@@ -14,13 +14,13 @@ import ConfirmedReservations from './pages/ConfirmedReservations';
 
 function App() {
 
-  const [confirmed, setConfirmed] = useState(false)
-
+  const [confirmed, setConfirmed] = useState(false);
   const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState('null');
-  const [guestCount, setGuestCount] = useState(1);
+  const [formattedDate, setFormattedDate] = useState(`${date.getFullYear()}-${date.getMonth() < 9 ? '0' : ''}${date.getMonth()+1}-${date.getDate() < 10 ? '0' : ''}${date.getDate()}`);
+  const [time, setTime] = useState(null);
+  const [guestCount, setGuestCount] = useState(4);
   const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(null);
   const [specialOccasion, setSpecialOccasion] = useState("None");
   const [requests, setRequests] = useState("");
 
@@ -47,10 +47,15 @@ function App() {
 
   useEffect(() => resetForm(),[reservations])
 
+  useEffect(() => {
+    setFormattedDate(`${date.getFullYear()}-${date.getMonth() < 9 ? '0' : ''}${date.getMonth()+1}-${date.getDate() < 10 ? '0' : ''}${date.getDate()}`)
+
+  },[date])
+
   const resetForm = () => {
       setSpecialOccasion('None')
       setRequests('')
-      setGuestCount(1)
+      setGuestCount(4)
       setTime(null)
       setDate(new Date())
       setConfirmed(false)
@@ -82,7 +87,8 @@ function App() {
       phoneNumber,
       specialOccasion,
       requests,
-      reservations
+      reservations,
+      formattedDate
     },
     setters: {
       setConfirmed,

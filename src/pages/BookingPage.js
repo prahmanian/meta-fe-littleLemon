@@ -17,6 +17,7 @@ const BookingPage = (props) => {
         phoneNumber,
         specialOccasion,
         requests,
+        formattedDate,
         // reservations
     } = props.values
 
@@ -69,7 +70,8 @@ const BookingPage = (props) => {
                         name,
                         phoneNumber,
                         specialOccasion,
-                        requests
+                        requests,
+                        formattedDate
                     }}
                     handlers = {{
                         setDate,
@@ -87,7 +89,7 @@ const BookingPage = (props) => {
             </section>
             <section>
                 <figure>
-                    <img src={restaurant} alt="" width='50%'/>
+                    <img src={restaurant} alt="" />
                 </figure>
             </section>
         </main>
