@@ -20,7 +20,7 @@ const Testimonials = () => {
     return (
         <section className='Testimonials container container-dark'>
             <h3 className='Testimonials-title'>Testimonials</h3>
-            <div className='h-flex'>
+            <div className='Testimonials-container'>
                 <Testimonial user={user1}/>
                 <Testimonial user={user2}/>
                 <Testimonial user={{...user2, name:'Bobby', rating:3}}/>

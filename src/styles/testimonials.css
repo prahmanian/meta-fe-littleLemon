@@ -8,6 +8,7 @@
 .Testimonials-title {
     margin: 0rem;
     margin-bottom: 4rem;
+    font-size: 2.5rem;
 }
 
 .Testimonial {
@@ -53,4 +54,29 @@
     top: -1.5rem;
     left: -0.5rem;
     opacity: 25%;
+}
+
+.Testimonials-container {
+    width: calc(100% - 4rem);
+    max-width: var(--max-width);
+    overflow-x: scroll;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+
+    padding: 0 2rem;
+}
+
+@media screen and (max-width: 1055px) { 
+    .Specials-header {
+        padding: 0 2rem;
+    }
+
+    .Testimonials-container {
+        justify-content: left;
+    }
 }
