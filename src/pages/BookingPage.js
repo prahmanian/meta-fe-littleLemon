@@ -46,8 +46,8 @@ const BookingPage = (props) => {
     } = props.times
 
     return (
-        <main className='container h-flex'>
-            <section>
+        <main className='container h-flex space-between wrap'>
+            <section className="Booking-form">
                 {confirmed ? 
                 <Confirm 
                     reservation = {{
@@ -87,7 +87,7 @@ const BookingPage = (props) => {
                     submitForm={submitForm}
                 />}
             </section>
-            <section>
+            <section className="FSImage">
                 <figure>
                     <img src={restaurant} alt="" />
                 </figure>

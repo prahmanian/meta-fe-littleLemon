@@ -76,17 +76,13 @@ const BookingForm = (props) => {
 
     return (
         <>
-            <h1>Make a Reservation</h1>
+            <h1 className='title'>Make a Reservation</h1>
             <form  className='Reservations-form'>
 
                 <div className='Form-element'>
-                    {
-                        isValidDate() ? 
-                        <label className='Form-label' htmlFor="date">What day would you like to make a reservation for?</label> :
-                        <label className='Form-label-error' htmlFor="date">Please select a date in the future...</label>
-                    }
-                    {/* <label htmlFor="date">Date:</label> */}
-                    <br/><input 
+                    
+                    <label className='Form-label' htmlFor="date">What day would you like to make a reservation for?</label>
+                    <input 
                         id="date"
                         name="date"
                         type="date"
@@ -96,6 +92,10 @@ const BookingForm = (props) => {
                         onChange={handleDateChange}
                         required
                     />
+                    {
+                        !isValidDate() && 
+                        <span className='Form-error'>Please select a date in the future...</span>
+                    }
         
                 </div>
 
@@ -103,10 +103,10 @@ const BookingForm = (props) => {
                     {
                         isValidTime() || (!isValidTime() && !timeTouched) ? 
                         <label className='Form-label' htmlFor="time">When will you arrive?</label> :
-                        <label className='Form-label-error' htmlFor="time">Please select an available time...</label>
+                        <label className='Form-error' htmlFor="time">Please select an available time...</label>
                     }
                     {/* <label className='Form-label' htmlFor="time">When will you arrive?</label> */}
-                    <br/><select 
+                    <select 
                         id="time"
                         name="time"
                         className={isValidTime() || (!isValidTime() && !timeTouched) ? 'Form-input' : 'Form-input Form-input-error'}
@@ -129,10 +129,10 @@ const BookingForm = (props) => {
                     {
                         isValidCount() ? 
                         <label className='Form-label' htmlFor="guestCount">How many people will be in your party?</label> :
-                        <label className='Form-label-error' htmlFor="guestCount">For parties of more than 10 people, please give us a call.</label>
+                        <label className='Form-error' htmlFor="guestCount">For parties of more than 10 people, please give us a call.</label>
                     }
                     {/* <label htmlFor="guestCount">How many people will be in your party?</label> */}
-                    <br/><input 
+                    <input 
                         id="guestCount"
                         name="guestCount"
                         type="number"
@@ -149,10 +149,10 @@ const BookingForm = (props) => {
                     {
                         isValidName() || (!isValidName() && !nameTouched) ? 
                         <label className='Form-label' htmlFor="name">What name should we hold your table under?</label> :
-                        <label className='Form-label-error' htmlFor="name">Please provide a name to hold your reservation.</label>
+                        <label className='Form-error' htmlFor="name">Please provide a name to hold your reservation.</label>
                     }
                     {/* <label htmlFor="name">What name should we hold your table under?</label> */}
-                    <br/><input 
+                    <input 
                         id="name"
                         name="name"
                         type="text"
@@ -169,10 +169,10 @@ const BookingForm = (props) => {
                     {
                         isValidPhoneNumber() || (!isValidPhoneNumber() && !phoneNumberTouched) ? 
                         <label className='Form-label' htmlFor="name">What phone number can we send you a confirmation text at?</label> :
-                        <label className='Form-label-error' htmlFor="name">Please enter a valid phone number.</label>
+                        <label className='Form-error' htmlFor="name">Please enter a valid phone number.</label>
                     }
                     {/* <label htmlFor="phoneNumber">What phone number can we send you a confirmation text at?</label> */}
-                    <br/><input 
+                    <input 
                         id="phoneNumber"
                         name="phoneNumber"
                         type="tel"
@@ -188,10 +188,11 @@ const BookingForm = (props) => {
 
                 <div className='Form-element'>
                     <label htmlFor="specialOccasion">Are you celebrating a special occasion?</label>
-                    <br/><select 
+                    <select 
                         id="specialOccasion"
                         name="specialOccasion"
                         placeholder="Select Occasion"
+                        className="Form-input"
                         value={specialOccasion}
                         onChange={(e)=>{setSpecialOccasion(e.target.value)}}
                         required
@@ -206,10 +207,11 @@ const BookingForm = (props) => {
                 {specialOccasion !== 'None' && (
                     <div className='Form-element'>
                         <label htmlFor="requests">Do you have any special requests to help celebrate your {specialOccasion}?</label>
-                        <br/><input 
+                        <textarea 
                             id="requests"
                             name="requests"
                             type="text"
+                            className="Form-input"
                             value={requests}
                             onChange={(e)=>{setRequests(e.target.value)}}
                             />

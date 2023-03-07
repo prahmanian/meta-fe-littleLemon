@@ -17,6 +17,12 @@
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @import './styles/nav.css';
 @import './styles/banner.css';
 @import './styles/specials.css';
@@ -24,31 +30,18 @@
 @import './styles/testimonials.css';
 @import './styles/about.css';
 @import './styles/footer.css';
+@import './styles/form.css';
 
 figure {
   object-fit: contain;
   max-width: 50vw;
   overflow: hidden;
+  /* height: 600px; */
 }
 
 
 
-.FormControl, .Form-element {
-  text-align: left;
-  justify-content: left;
-  width: 100%;
-  /* background-color: #495E57; */
-  margin: 2rem 0;
 
-}
-
-.Form-input-error {
-  border-color: var(--warning);
-  border-width: 2px;
-}
-.Form-label-error {
-  color: var(--warning);
-}
 
 .container {
   width: 100vw;
@@ -112,8 +105,9 @@ figure {
   font-family: var(--markazi);
   font-size: 64px;
   font-weight: 400;
-  margin-bottom: 0.75rem;
-  line-height: 0;
+  margin-bottom: -1rem;
+  /* line-height: 0; */
+  width: fit-content;
 }
 
 .subtitle {
@@ -122,4 +116,18 @@ figure {
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1055px) { 
+  figure {
+    max-width: 100vw;
+    /* object-position: 50% 50%; */
+  }
+
+  figure > img {
+    max-width: 100vw;
+    /* height: 25rem; */
+    object-fit: cover;
+    object-position: top;
+  }
 }

@@ -1,0 +1,52 @@
+label {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.Form-input {
+    /* width: fit-content; */
+    /* min-width: 30ch; */
+    width: 100%;
+    /* max-width: 30ch; */
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--dark);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.FormControl, .Form-element {
+    text-align: left;
+    justify-content: left;
+    width: 100%;
+    /* background-color: #495E57; */
+    margin: 2rem 0;
+
+}
+    
+.Booking-form {
+    max-width: calc(var(--max-width)/2);
+    padding-left: 4rem;
+}
+    
+.Form-input-error {
+    border-color: var(--warning);
+    border-width: 2px;
+}
+
+.Form-error {
+    display: block;
+    color: var(--warning);
+}
+
+@media screen and (max-width: 1055px) { 
+    .Booking-form {
+        max-width: calc(var(--max-width));
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
