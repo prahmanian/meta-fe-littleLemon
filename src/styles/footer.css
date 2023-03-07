@@ -1,8 +1,16 @@
 .Footer {
     background-color: var(--primary-green);
     color: var(--light);
-    min-height: auto;
-    height: 20rem;
+    min-height: min-content;
+
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 0;
 }
 
 .Footer-link, .Footer li {
@@ -14,14 +22,17 @@
     margin-bottom: 1rem;
 }
 
-.Footer img {
-    max-height: 10rem;
+.Nav-logo {
+    /* max-height: 12rem; */
+    width: 7.5rem;
+    margin: 0 auto;
 }
 
 .Footer-section {
-    max-width: 16ch;
+    min-width: 16ch;
     justify-content: top;
     align-self: flex-start;
+    padding: 2rem 0;
 
 }
 
@@ -30,7 +41,6 @@
     font-size: 1.5rem;
     color: var(--primary-yellow);
     line-height: 1.5rem;
-    margin-top: 4rem;
     margin-bottom: 1rem;
 }
 
@@ -49,7 +59,7 @@
 
 .Footer-link:focus {
     color: var(--secondary-orange);
-    outline: 1px solid var(--primary-yellow);
+    /* outline: 1px solid var(--primary-yellow); */
 }
 
 .Footer-link:active {

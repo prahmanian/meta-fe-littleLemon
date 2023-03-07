@@ -5,10 +5,12 @@ import navLinks, {socialLinks} from '../NavLinks';
 
 const Footer = () => {
     return (
-        <footer className='Footer container h-flex space-around'>
-
-            <img src={logo} className="Nav-logo" alt="Little Lemon Logo" />
+        <footer className='Footer space-around'>
             
+            <section className='Footer-section'>
+                <img src={logo} className="Nav-logo" alt="Little Lemon Logo" />
+            </section>
+
             <nav className='Footer-section'>
                 <h3 className='Footer-heading'>Navigation</h3>
                 <ul>
