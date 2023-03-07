@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className='Footer '>
             <div className="Footer-content contents space-around">
                 <section className='Footer-section'>
-                    <img src={logo} className="Nav-logo" alt="Little Lemon Logo" />
+                    <img src={logo} className="Footer-logo" alt="Little Lemon Logo" />
                 </section>
 
                 <nav className='Footer-section'>

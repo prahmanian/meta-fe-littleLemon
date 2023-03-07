@@ -120,7 +120,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
+        <Nav reservations={reservations}/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

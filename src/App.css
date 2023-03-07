@@ -74,6 +74,10 @@ figure {
   gap: 2rem;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .v-flex {
   display: flex;
   flex-direction: column;

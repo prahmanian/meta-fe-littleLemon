@@ -1,11 +1,30 @@
 .Nav {
-    gap: 5rem;
+    width: 100vw;
     justify-content: center;
     margin: 1rem auto;
 }
 
+.Nav > .Nav-contents {
+    padding: 0 4rem;
+}
+
+.small-gap {
+    gap: 0.25rem;
+}
+
 .Nav li {
     list-style: none;
+}
+
+.Nav-logo {
+    /* max-width: max-content; */
+    flex-basis: 150px;
+    margin: 0 ;
+    justify-content: left;
+}
+
+#NavLinks {
+    flex-basis: content;
 }
 
 .Nav-link {
@@ -14,7 +33,7 @@
     padding: 0.25rem;
     font-weight: 700;
     font-family: var(--markazi);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .Nav-link:visited {
@@ -32,4 +51,62 @@
 
 .Nav-link:active {
     color: var(--primary-yellow);
+}
+
+.Bookings {
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    flex-basis: content;
+}
+
+#Burger, .menu {
+    display: none;
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    flex-basis: content;
+}
+
+.Open {
+    position: absolute;
+    visibility: visible;
+    width: min-content;
+    background-color: white;
+    transition: 60ms ease-in-out;
+    
+}
+
+.Closed {
+    position: absolute;
+    visibility: hidden;
+    transition: 60ms ease-in-out;
+}
+
+#Burger-menu {
+    padding: 0 3rem;
+    font-size: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    
+}
+
+#Burger-menu .Nav-link {
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 1055px) {
+    #NavLinks {
+        display: none;
+    }
+
+    .Nav > .Nav-contents {
+        padding: 0 2rem;
+    }
+
+    #Burger {
+        display: inline-block;
+    }
 }
