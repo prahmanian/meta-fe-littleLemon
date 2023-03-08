@@ -12,6 +12,10 @@
   --max-width: 1200px;
 }
 
+body {
+  background-color: var(--primary-green);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +45,10 @@ figure {
   /* height: 600px; */
 }
 
+main {
+  /* min-height: calc(100vh - 30rem); */
+  background-color: white;
+}
 
 
 
