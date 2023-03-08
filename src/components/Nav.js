@@ -1,7 +1,7 @@
 import React , { useState } from 'react'
 import logo from '../assets/LittleLemonLogo.svg';
 import navLinks from '../NavLinks';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Bookings from './Bookings';
 import { Squash as Hamburger } from 'hamburger-react'
 
@@ -24,7 +24,7 @@ const Nav = ({reservations}) => {
                 <Hamburger className="menu"/> :
                 <Hamburger className="menu"/>
                 } */}
-                <img src={logo} className="Nav-logo" alt="Little Lemon Logo" />
+                <Link to="/"><img src={logo} className="Nav-logo" alt="Little Lemon Logo" /></Link>
                 <ul id="NavLinks" className='h-flex space-between wrap'>
                     {links}
                 </ul>

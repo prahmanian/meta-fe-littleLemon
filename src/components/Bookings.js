@@ -1,12 +1,13 @@
 import React from 'react'
-import {BsFillCalendarCheckFill} from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import { BsFillCalendarCheckFill } from 'react-icons/bs'
 
 const Bookings = ({reservations}) => {
     return (
-        <div className='Bookings'>
+        <Link className='Bookings' to="/confirmed">
             <BsFillCalendarCheckFill className='Bookings-Icon'/>
             <span>{reservations.length}</span>
-        </div>
+        </Link>
     )
 }
 

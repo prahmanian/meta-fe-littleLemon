@@ -40,16 +40,16 @@
     color: var(--primary-green);
 }
 
-.Nav-link:hover {
+.Nav-link:hover, .Bookings:hover {
     color: var(--secondary-orange);
 }
 
-.Nav-link:focus {
+.Nav-link:focus , .Bookings:focus {
     color: var(--secondary-orange);
-    outline: 1px solid var(--primary-yellow);
+    /* outline: 1px solid var(--primary-yellow); */
 }
 
-.Nav-link:active {
+.Nav-link:active , .Bookings:active {
     color: var(--primary-yellow);
 }
 
@@ -60,6 +60,11 @@
     color: var(--primary-green);
     font-size: 1.5rem;
     flex-basis: content;
+    text-decoration: none;
+}
+
+.Bookings > span {
+    color: var(--primary-yellow);
 }
 
 #Burger, .menu {
