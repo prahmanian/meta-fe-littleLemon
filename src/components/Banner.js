@@ -4,8 +4,9 @@ import image from '../assets/MarioAndAdrianA.jpg'
 
 const Banner = () => {
     return (
-        <header className='Header container h-flex'>
-            <div className='Header-details v-flex'>
+        <header className='Header '>
+
+            <div className='Header-details'>
                 <h1 className='title'>Little Lemon</h1>
                 <h2 className='subtitle'>Chicago</h2>
                 <p className='Header-text'>
@@ -13,9 +14,8 @@ const Banner = () => {
                 </p>
                 <Button to="reservations" type="primary">Reserve a Table</Button>
             </div>
-            <figure>
-                <img src={image} alt="Little Lemon Bistro"/>
-            </figure>
+
+            <img src={image} alt="Little Lemon Bistro"/>
             
 
         </header>

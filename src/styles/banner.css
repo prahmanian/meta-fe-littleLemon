@@ -1,26 +1,65 @@
 .Header {
-
     background-color: var(--primary-green);
     color: var(--light);
-    gap: 5rem;
+    margin: 0 auto;
+    width: 100vw;
+    min-height: 25rem;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    flex-flow: row nowrap;
 }
 
 .Header-details {
-    max-width: 40ch;
-    /* margin-left: 5rem; */
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 2rem;
+    /* margin-left: 10%; */
+    margin-left: 0;
+    
+    padding:  3rem 4rem;
+    padding-left: 10%;
+    height: 100%;
+    min-height: 25rem;
+    
     font-family: var(--karla);
     text-align: left;
-    /* margin-left: 5rem; */
+    justify-content: flex-start;
+    z-index: 10;
+    position: relative;
+    background-image: linear-gradient(to right, rgba(73, 94, 87, 1) 0%, rgba(73, 94, 87, 0.95) 65%, rgba(73, 94, 87, 0.85) 75% , rgba(73, 94, 87, 0.65) 95% , rgba(73, 94, 87, 0.0) 100%);
+
 }
 
 .Header-text {
     margin-bottom: 2rem;
 }
 
-.Header figure {
-    width: 40vw;
+.Header img {
+    min-width: calc(var(--max-width));
+    height: 100%;
+    min-height: 25rem;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+    object-position: 100% 20%;
+    /* max-width: calc(var(--max-width)/2); */
+    justify-content: right;
 }
 
-.Header figure img {
-    width: 100%;
+@media screen and (max-width: 900px) { 
+    .Header img {
+        object-fit:contain;
+        min-width: 800px;
+    }
+}
+
+@media screen and (max-width: 700px) { 
+    .Header-details {
+        background-image: linear-gradient(to right, rgba(73, 94, 87, 1) 0%, rgba(73, 94, 87, 0.75) 25%, rgba(73, 94, 87, 0.65) 55% , rgba(73, 94, 87, 0.45) 75% , rgba(73, 94, 87, 0.0) 100%);
+    }
 }
