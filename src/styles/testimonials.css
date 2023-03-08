@@ -14,7 +14,7 @@
 .Testimonial {
     background-color: white;
     border-radius: 1rem;
-    min-width: 5rem;
+    min-width: 8rem;
     max-width: 8rem;
     padding: 1rem;
     color: var(--dark);
@@ -22,17 +22,20 @@
 
 .Testimonial-user {
     margin: 0.5rem 0;
-    gap: auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
 }
 
 .Testimonial-avatar {
-    min-width: 0px;
+    min-width: 30px;
+    justify-self: start;
 }
 
 .Testimonial-name {
     font-size: 1rem;
     margin: 0;
-
+    margin-left: auto;
 }
 
 .Testimonial-quote {
@@ -75,8 +78,13 @@
     .Specials-header {
         padding: 0 2rem;
     }
+}
 
+@media screen and (max-width: 700px) { 
     .Testimonials-container {
         justify-content: left;
+        /* margin: 0; */
+        padding: 0;
+        gap: 1rem;
     }
 }

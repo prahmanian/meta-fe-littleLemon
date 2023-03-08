@@ -19,7 +19,7 @@ const Testimonial = (props) => {
                 starCount={5}
                 value={rating ? rating : 4}
             />
-            <div className='Testimonial-user h-flex space-between '>
+            <div className='Testimonial-user'>
                 <Avatar className="Testimonial-avatar" name={name} size="30" round={true} src={image} alt={`Image of ${name}`}/>
                 <h6 className='Testimonial-name'>{name}</h6>
             </div>
