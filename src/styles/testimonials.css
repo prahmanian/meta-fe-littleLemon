@@ -15,9 +15,12 @@
     background-color: white;
     border-radius: 1rem;
     min-width: 8rem;
-    max-width: 8rem;
+    max-width: 10rem;
+    height: 12rem;
     padding: 1rem;
     color: var(--dark);
+    text-align: center;
+
 }
 
 .Testimonial-user {
