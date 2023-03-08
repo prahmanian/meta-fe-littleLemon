@@ -33,6 +33,7 @@ textarea {
     /* padding-left: 6rem; */
     margin: 0 auto;
     margin-right: 4rem;
+    font-size: 1.125rem;
 }
     
 .Form-input-error {
@@ -45,10 +46,20 @@ textarea {
     color: var(--warning);
 }
 
+.Confirm-title {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.Confirm-details {
+    text-align: center;
+}
+
 @media screen and (max-width: 1055px) { 
     .Booking-form {
         max-width: calc(var(--max-width));
         padding-left: 2rem;
         padding-right: 2rem;
+        margin-right: auto;
     }
 }

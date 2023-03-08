@@ -3,30 +3,35 @@ import {Link} from 'react-router-dom'
 
 const Confirm = ({reservation, edit, confirm}) => {
     return (
-        <div>
-            <h1>Let's confirm...</h1>
+        <>
+            <h1 className='title Confirm-title'>Let's confirm...</h1>
 
-            <p>Who:</p>
-            <p><b>{reservation.name}</b>, party of <b>{reservation.guestCount}</b>!</p>
-            <br/><p>What:</p>
-            <p>{reservation.specialOccasion !== 'None' ? `A special ${reservation.specialOccasion} celebration.` : 'Great vibes and a nice Mediterranean meal.'}</p>
-            
-            <br /><p>When: </p>
-            <p><b>{reservation.date.toLocaleDateString('en-US')}</b> at <b>{reservation.time}</b></p>
+            <div className='Confirm-details'>
+                <p>Joining us is...</p>
+                <br/>
+                <p><b>{reservation.name}</b>, party of <b>{reservation.guestCount}</b>!</p>
+                <p>for</p>
+                <p>{reservation.specialOccasion !== 'None' ? `A special ${reservation.specialOccasion} celebration.` : 'Great vibes and a nice Mediterranean meal.'}</p>
+                
+                <br />
+                <br />
+                <p>We'll see you on </p>
+                <p><b>{reservation.date.toLocaleDateString()}</b> at <b>{reservation.time}</b></p>
 
-            <br/><p>Where:</p>
-            <p>Little Lemon | Chicago</p>
-            <p>35 Lemongrass Way</p>
+                <p>at</p>
+                <p>Little Lemon | Chicago</p>
+                <p>35 Lemongrass Way</p>
 
-            {reservation.requests && (<><br/><p>Special Requests:</p>
-            <p>{reservation.requests}</p></>)}
+                {reservation.requests && (<><br/><br/><p>Special Requests:</p>
+                <p>{reservation.requests}</p></>)}
 
-            <br/><p>We'll send you a text reminder at <b>{reservation.phoneNumber}</b>.</p><br/>
+                <br/><p>We'll send you a text reminder at <b>{reservation.phoneNumber}</b>.</p><br/>
 
-            <button onClick={() => edit()}>Edit</button>
-            <Link to="/confirmed"><button onClick={() => confirm()}>Confirm!</button></Link>
+                <button onClick={() => edit()}>Edit</button>
+                <Link to="/confirmed"><button onClick={() => confirm()}>Confirm!</button></Link>
 
-        </div>
+            </div>
+        </>
     )
 }
 
