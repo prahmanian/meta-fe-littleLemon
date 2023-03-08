@@ -1,5 +1,5 @@
 import React from 'react'
-import DishIcon from '../assets/DishIcon.svg'
+import { Link } from 'react-router-dom'
 
 const MenuItem = (props) => {
     const {name, image, price, description} = props.item
@@ -12,7 +12,7 @@ const MenuItem = (props) => {
                     <span className='MenuItem-price'>${price}</span>
                 </div>
                 <p>{description}</p>
-                <a href="/" role="button" disabled className="MenuItem-link">Order for Delivery</a>
+                <Link to="/order" role="button" disabled aria-label="Order Link" className="MenuItem-link">Order for Delivery</Link>
             </div>
 
         </article>
