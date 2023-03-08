@@ -178,6 +178,7 @@ const BookingForm = (props) => {
                         type="tel"
                         minLength={10}
                         maxLength={10}
+                        placeholder={"0000000000"}
                         onBlur={()=> setPhoneNumberTouched(true)}
                         className={isValidPhoneNumber() || (!isValidPhoneNumber() && !phoneNumberTouched) ? 'Form-input' : 'Form-input Form-input-error'}
                         value={phoneNumber}

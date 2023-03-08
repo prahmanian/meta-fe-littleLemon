@@ -30,9 +30,10 @@ textarea {
     
 .Booking-form {
     max-width: calc(var(--max-width)/2);
+    width: 100%;
     /* padding-left: 6rem; */
     margin: 0 auto;
-    margin-right: 4rem;
+    margin-left: 4rem;
     font-size: 1.125rem;
 }
     
@@ -49,6 +50,7 @@ textarea {
 .Confirm-title {
     margin: 0 auto;
     padding-bottom: 2rem;
+    text-align: center;
 }
 
 .Confirm-details {
@@ -60,6 +62,6 @@ textarea {
         max-width: calc(var(--max-width));
         padding-left: 2rem;
         padding-right: 2rem;
-        margin-right: auto;
+        margin-left: auto;
     }
 }
