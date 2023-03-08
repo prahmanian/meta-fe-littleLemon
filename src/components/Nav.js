@@ -12,7 +12,7 @@ const Nav = ({reservations}) => {
     };
 
     const links = navLinks.map(({title, path}) => 
-        <li key={title}><NavLink style={({isActive}) => isActive ? activeStyle : undefined} className="Nav-link" to={path} > {title} </NavLink></li>
+        <li key={title}><NavLink style={({isActive}) => isActive ? activeStyle : undefined} className="Nav-link" to={path}  onClick={()=> {setOpen(false)}}> {title} </NavLink></li>
     )
 
     const [isOpen, setOpen] = useState(false)
