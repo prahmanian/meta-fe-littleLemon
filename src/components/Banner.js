@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import image from '../assets/MarioAndAdrianA.jpg'
 
 const Banner = () => {
@@ -10,7 +11,7 @@ const Banner = () => {
                 <p className='Header-text'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi massa, luctus quis ante pharetra, mollis bibendum turpis. Nulla volutpat condimentum commodo. Proin a risus bibendum, hendrerit purus sit amet, fermentum sapien.
                 </p>
-                <button>Reserve a Table</button>
+                <Button to="reservations" type="primary">Reserve a Table</Button>
             </div>
             <figure>
                 <img src={image} alt="Little Lemon Bistro"/>

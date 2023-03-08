@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from './Button'
 
 const BookingForm = (props) => {
 
@@ -218,7 +219,7 @@ const BookingForm = (props) => {
                     </div>
                 )}
 
-                <input type='submit' value="submit" disabled={!validate()} onClick={(e)=>{props.submitForm(e, {
+                <input type='submit' className='Button Button-primary' value="submit" disabled={!validate()} onClick={(e)=>{props.submitForm(e, {
                     date,
                     time,
                     guestCount,

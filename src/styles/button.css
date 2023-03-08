@@ -1,0 +1,72 @@
+.Button-set {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.Button {
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    /* max-width: max-content; */
+    cursor: pointer;
+}
+
+.Button-link {
+    max-width: fit-content;
+}
+
+.Button-primary {
+    background-color: var(--primary-yellow);
+    color: var(--dark);
+    border: 2px solid var(--primary-yellow);
+}
+
+.Button-primary:hover {
+    background-color: var(--secondary-orange);
+    border-color: var(--secondary-orange);
+}
+
+.Button-primary:active {
+    background-color: var(--secondary-peach);
+    border-color: var(--secondary-peach);
+}
+
+.Button-dark {
+    background-color: var(--dark);
+    color: var(--light);
+    border: 2px solid var(--dark);
+}
+.Button-dark:hover {
+    background-color: var(--secondary-orange);
+    border-color: var(--secondary-orange);
+    color: var(--dark);
+}
+.Button-dark:active {
+    background-color: var(--secondary-peach);
+    border-color: var(--secondary-peach);
+}
+
+.Button-light {
+    background-color: transparent;
+    color: var(--primary-yellow);
+    border: 2px solid var(--primary-yellow);
+    /* border: none; */
+}
+.Button-light:hover {
+    background-color: var(--secondary-orange);
+    border-color: var(--secondary-orange);
+    color: var(--dark);
+    /* border: none; */
+}
+.Button-light:active {
+    background-color: var(--secondary-peach);
+    border-color: var(--secondary-peach);
+}
+
+.Button:disabled,
+.Button-primary:disabled,
+.Button-dark:disabled,
+.Button-light:disabled {
+    background-color: var(--light);
+    color: lightgray;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Button from './Button'
 
 const Confirm = ({reservation, edit, confirm}) => {
     return (
@@ -27,9 +28,11 @@ const Confirm = ({reservation, edit, confirm}) => {
 
                 <br/><p>We'll send you a text reminder at <b>{reservation.phoneNumber}</b>.</p><br/>
 
-                <button onClick={() => edit()}>Edit</button>
-                <Link to="/confirmed"><button onClick={() => confirm()}>Confirm!</button></Link>
-
+                <div className="Button-set">
+                    <Button type="light" onClick={() => edit()}>Edit</Button>
+                    <Button type="primary" to="/confirmed" onClick={() => confirm()}>Confirm!</Button>
+                </div>
+                
             </div>
         </>
     )

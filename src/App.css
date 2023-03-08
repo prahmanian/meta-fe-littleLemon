@@ -32,6 +32,7 @@
 @import './styles/footer.css';
 @import './styles/form.css';
 @import './styles/bookings.css';
+@import './styles/button.css';
 
 figure {
   object-fit: contain;
